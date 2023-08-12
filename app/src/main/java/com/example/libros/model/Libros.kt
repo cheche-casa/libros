@@ -15,15 +15,15 @@ data class Libro (
     val id: String,
     val selfLink: String,
     val volumeInfo: VolumeInfo,
-    //Estas propiedades poden vir a nulo
-    val description: String? = null,
-    val imageLinks: ImageLinks? = null
 )
 
 @Serializable
 data class VolumeInfo (
     val title: String,
-    val authors: List<String>
+    val authors: List<String>,
+    //Estas propiedades poden vir a nulo
+    val description: String? = null,
+    val imageLinks: ImageLinks? = null
 )
 
 @Serializable
