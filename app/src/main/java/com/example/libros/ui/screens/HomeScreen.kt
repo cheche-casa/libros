@@ -81,7 +81,7 @@ fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
 @Composable
 private fun LibrosGridScreen(libros: List<Libro>, modifier: Modifier = Modifier) {
     LazyVerticalGrid(
-        columns = GridCells.Adaptive(150.dp),
+        columns = GridCells.Adaptive(100.dp),
         modifier = modifier.fillMaxWidth(),
         contentPadding = PaddingValues(4.dp)
     ){
@@ -93,16 +93,17 @@ private fun LibrosGridScreen(libros: List<Libro>, modifier: Modifier = Modifier)
 
 @Composable
 fun LibroCard(libro: Libro, modifier: Modifier = Modifier) {
+    val url = libro.volumeInfo.imageLinks?.thumbnail?.replace("http","https")
     Card(
         modifier = modifier
             .padding(4.dp)
             .fillMaxWidth()
-            .aspectRatio(1.5f),
+            .aspectRatio(1f),
         elevation =  CardDefaults.cardElevation(defaultElevation = 8.dp)
     ) {
         AsyncImage(
             model = ImageRequest.Builder(context = LocalContext.current)
-                .data(libro.volumeInfo.imageLinks?.thumbnail)
+                .data(url)
                 .crossfade(true)
                 .build(),
             error = painterResource(R.drawable.ic_broken_image),

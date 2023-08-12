@@ -1,11 +1,8 @@
 package com.example.libros.data
 
-import android.app.Application
-import android.net.http.HttpResponseCache.install
 import com.example.libros.network.LibrosApiService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
 import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
 
