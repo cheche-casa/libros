@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Libros (
     val kind: String,
-    val totalItems: String,
+    val totalItems: Int,
     val items: List<Libro>
 )
 
